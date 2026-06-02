@@ -13,6 +13,7 @@ load_dotenv()
 # Semua modul yang butuh Gemini AI menggunakan client ini
 # ============================================================
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+genai_legacy.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 # Model untuk rag_system dan study_plan yang pakai genai_legacy
 legacy_model = genai_legacy.GenerativeModel("gemini-2.5-flash")
